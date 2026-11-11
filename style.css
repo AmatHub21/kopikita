@@ -1,0 +1,682 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+:root {
+    --black: #11100f;
+    --dark: #191613;
+    --brown: #67412d;
+    --cream: #efe5d8;
+    --beige: #c8a889;
+    --white: #fffaf4;
+    --gray: #91867e;
+    --line: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+    min-height: 650px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 80px max(7%, 30px);
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(17, 16, 15, 0.95) 0%,
+            rgba(17, 16, 15, 0.70) 45%,
+            rgba(17, 16, 15, 0.35) 100%
+        ),
+        url("images/coffee-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* efek cahaya */
+
+header::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -150px;
+    top: -180px;
+
+    background: rgba(200, 168, 137, 0.12);
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+}
+
+
+/* garis dekorasi */
+
+header::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 45px;
+    left: 7%;
+
+    width: 100px;
+    height: 2px;
+
+    background: var(--beige);
+}
+
+
+header h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(65px, 11vw, 130px);
+
+    line-height: 0.9;
+
+    font-weight: 600;
+
+    letter-spacing: -5px;
+
+    color: var(--cream);
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+header p {
+    margin-top: 25px;
+
+    font-size: 15px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 5px;
+
+    color: var(--beige);
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+nav {
+    position: sticky;
+
+    top: 0;
+
+    z-index: 999;
+
+    height: 76px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 42px;
+
+    background: rgba(17, 16, 15, 0.94);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid var(--line);
+}
+
+nav a {
+    color: #bcb1a8;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    position: relative;
+
+    transition: 0.3s;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -9px;
+
+    width: 0;
+
+    height: 2px;
+
+    background: var(--beige);
+
+    transform: translateX(-50%);
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--cream);
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.container {
+    width: min(1180px, 88%);
+
+    margin: auto;
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+section {
+    margin: 130px 0;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+}
+
+section h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(38px, 6vw, 68px);
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    color: var(--cream);
+
+    max-width: 700px;
+
+    margin-bottom: 30px;
+
+    position: relative;
+}
+
+section h2::before {
+    content: "KOPIKITA";
+
+    display: block;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    color: var(--beige);
+
+    margin-bottom: 17px;
+}
+
+section h2::after {
+    display: none;
+}
+
+section p {
+    max-width: 650px;
+
+    color: var(--gray);
+
+    font-size: 15px;
+
+    line-height: 1.9;
+}
+
+
+/* =====================================================
+   MENU
+===================================================== */
+
+.daftar-menu {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-top: 55px;
+}
+
+
+/* CARD */
+
+.card {
+    background: #1b1815;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 4px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    transition:
+        transform 0.45s ease,
+        border-color 0.45s ease,
+        background 0.45s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+
+    background: #211c18;
+
+    border-color: rgba(200, 168, 137, 0.45);
+}
+
+
+/* IMAGE */
+
+.card img {
+    width: 100%;
+
+    height: 336px;
+
+    display: block;
+
+    object-fit: cover;
+
+    filter: saturate(0.85);
+
+    transition:
+        transform 0.7s ease,
+        filter 0.7s ease;
+}
+
+.card:hover img {
+    transform: scale(1.06);
+
+    filter: saturate(1);
+}
+
+
+/* CONTENT */
+
+.card h3 {
+    font-family: "Playfair Display", serif;
+
+    color: var(--cream);
+
+    font-size: 25px;
+
+    font-weight: 500;
+
+    margin: 25px 25px 8px;
+}
+
+.card p {
+    color: var(--gray);
+
+    font-size: 13px;
+
+    margin: 0 25px;
+
+    line-height: 1.7;
+}
+
+.card .harga {
+    color: var(--beige);
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    margin-top: 18px;
+}
+
+
+/* =====================================================
+   BUTTON
+===================================================== */
+
+button {
+    border: 1px solid rgba(200, 168, 137, 0.5);
+
+    background: transparent;
+
+    color: var(--cream);
+
+    border-radius: 0;
+
+    padding: 12px 25px;
+
+    margin: 20px 25px 28px;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+button:hover {
+    background: var(--beige);
+
+    border-color: var(--beige);
+
+    color: var(--black);
+}
+
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+table {
+    width: 100%;
+
+    margin-top: 45px;
+
+    border-collapse: collapse;
+
+    background: #181512;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+th {
+    padding: 19px 22px;
+
+    background: #221d18;
+
+    color: var(--beige);
+
+    text-align: left;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+}
+
+td {
+    padding: 19px 22px;
+
+    color: var(--gray);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+    font-size: 13px;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background: #201b17;
+
+    color: var(--cream);
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+form {
+    max-width: 650px;
+
+    margin-top: 45px;
+
+    padding: 35px;
+
+    background: #191613;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 4px;
+}
+
+label {
+    display: block;
+
+    margin: 18px 0 8px;
+
+    color: #b9aaa0;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    text-transform: uppercase;
+}
+
+label:first-child {
+    margin-top: 0;
+}
+
+input,
+select {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    background: #11100f;
+
+    color: var(--cream);
+
+    border-radius: 2px;
+
+    outline: none;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--beige);
+
+    box-shadow: 0 0 0 3px rgba(200, 168, 137, 0.08);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    margin-top: 150px;
+
+    padding: 45px 20px;
+
+    text-align: center;
+
+    background: #0d0c0b;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+footer p {
+    color: #716861;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    header {
+        min-height: 560px;
+    }
+
+    .daftar-menu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    section {
+        margin: 100px 0;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    header {
+        min-height: 520px;
+
+        padding: 50px 25px;
+    }
+
+    header h1 {
+        font-size: 65px;
+
+        letter-spacing: -3px;
+    }
+
+    header p {
+        font-size: 10px;
+
+        letter-spacing: 3px;
+    }
+
+    header::after {
+        left: 25px;
+    }
+
+    nav {
+        height: auto;
+
+        padding: 18px 10px;
+
+        gap: 18px;
+
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    section {
+        margin: 85px 0;
+    }
+
+    section h2 {
+        font-size: 43px;
+    }
+
+    .daftar-menu {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .card img {
+        height: 300px;
+    }
+
+    table {
+        font-size: 11px;
+    }
+
+    th,
+    td {
+        padding: 13px 10px;
+    }
+
+    form {
+        padding: 25px 20px;
+    }
+}
